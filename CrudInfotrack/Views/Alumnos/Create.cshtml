@@ -1,0 +1,61 @@
+﻿@model CrudInfotrack.Models.Alumno
+@{
+    ViewData["Title"] = "Crear Nuevo Alumno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Crear Nuevo Alumno</h3>
+        </div>
+    </div>
+   
+    <div class="row-">
+        <div class="col-sm-10">
+            <form method="post" asp-action="Create">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Nombres" class="control-label"></label>
+                    <input asp-for="Nombres" class="form-control" />
+                    <span asp-validation-for="Nombres" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Apellidos" class="control-label"></label>
+                    <input asp-for="Apellidos" class="form-control" />
+                    <span asp-validation-for="Apellidos" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Num_Documento" class="control-label"></label>
+                    <input asp-for="Num_Documento" class="form-control" type="number" min="000000000" max="99999999999" />
+                    <span asp-validation-for="Num_Documento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Fecha_nacimiento" class="control-label"></label>
+                    <input asp-for="Fecha_nacimiento" class="form-control" />
+                    <span asp-validation-for="Fecha_nacimiento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Crear Alumno" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+ 
+
+
+</div>
+
+@section Scripts{ 
+
+    @{<partial name="_ValidationScriptsPartial" /> }
+}
+
+
